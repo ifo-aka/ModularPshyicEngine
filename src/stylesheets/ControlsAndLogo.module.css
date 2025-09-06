@@ -1,0 +1,54 @@
+#root {
+  min-width: 0;
+  background-color: black;
+}
+
+.Logoface {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 16px;
+  margin: 40px 5px 0 0;
+  display: block;
+  object-fit: contain;
+}
+
+.Logoface:hover {
+  filter: drop-shadow(0 0 30px rgba(40, 50, 241, 0.6));
+}
+
+.controlPanel {
+  height: 35vh;
+  background-color:#02b1d4b0;
+  width: 100%;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
+
+.Controlsbtn {
+  background-color: black;
+  border: 1px solid #02b1d4b0;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin: 4px;
+}
+
+.NetworkAiimg {
+  width: 100px;
+  height: inherit;
+  object-fit: contain;
+  display: block;
+}
+
+.Controlsbtn:hover {
+  scale: 1.05;
+  transition: 0.5s;
+  filter: drop-shadow(0 0 30px rgba(40, 50, 241, 0.6));
+}
+
+/* responsive omitted for brevity, can convert later */
