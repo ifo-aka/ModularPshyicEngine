@@ -2,9 +2,10 @@
 import { useState ,useContext} from 'react';
 
 import { Link } from 'react-router';
-import "../stylesheets/sidebar.css"
+
 import { DashboardContext } from "../store/DashboardContext";
 import { useSelector } from 'react-redux';
+import styles from "../stylesheets/Sidebar.module.css";
 function Sidebar() {
   const [openMenu, setOpenMenu] = useState('');
    const context = useContext(DashboardContext);
@@ -25,42 +26,48 @@ function Sidebar() {
 
  
 
-  return sidebarState && <div className={`sidebar ${ismobile && "mobile"}`}>
-      <div className="sidebar-title">AI Control Panel {ismobile && <span> X</span>} </div>
-
-      <div className={`menu ${ismobile&& "mobile"}`}>
-       <Link to="/" className='menu-item home-link'> <div className="home" onClick={handleSidebarclicksWhenisMobile}>Home</div></Link>
-        <div className="menu-item" onClick={() => toggleMenu('uiux')}>UI/UX AI</div>
+  return <>
+  {sidebarState && <div className={`${styles.sidebar} ${ismobile && styles.mobile}`}>
+      <div className={styles.sidebarTitle}>AI Control Panel {ismobile && <div className="closeSidebar">&times</div> } </div>
+      <div className={`${styles.menu} ${ismobile && styles.mobile}`}>
+       <Link to="/" className={styles.homeLink}> <div className={styles.home} >Home</div></Link>
+        <div className={styles.menuItem} onClick={() => toggleMenu('uiux')}>UI/UX AI</div>
         {openMenu === 'uiux' && (
-          <div className="submenu">
+          <div className={styles.submenu}>
             <Link to="/StructureAI" onClick={handleSidebarclicksWhenisMobile}>Structure AI</Link>
             <div>Keywords AI</div>
             <div>Spider AI</div>
             <div>Animation Control AI</div>
           </div>
         )}
-
-        <div className="menu-item" onClick={() => toggleMenu('backend')}>Backend AI</div>
+        <div className={styles.menuItem} onClick={() => toggleMenu('backend')}>Backend AI</div>
         {openMenu === 'backend' && (
-          <div className="submenu">
+          <div className={styles.submenu}>
             <Link to="/BackEndAI" onClick={handleSidebarclicksWhenisMobile}>Main Backend SubAI</Link>
             <div>Database AI</div>
             <div>API Handler AI</div>
           </div>
         )}
-
-        <div className="menu-item">Security AI</div>
-        <div className="menu-item">Network AI</div>
-        <div className="menu-item">Toolbox</div>
-        {isMobile &&  !isLogin &&   <div className="d-flex flex-column">
-      <Link to={"/signup"} className="signup bg-none m-2 text-center text-decoration-none  menu-item" onClick={handleSidebarclicksWhenisMobile}>SignUp</Link>
-       <Link to={"/Login"} className="login bg-none m-2 text-center text-decoration-none  menu-item" onClick={handleSidebarclicksWhenisMobile}>LogIn</Link>
-
+        <div className={styles.menuItem}>Security AI</div>
+        <div className={styles.menuItem}>Network AI</div>
+        <div className={styles.menuItem}>Toolbox</div>
+        {ismobile && !isLogin &&   <div className={styles.authLinks}>
+      <Link to={"/signup"} className={styles.signupLink} onClick={handleSidebarclicksWhenisMobile}>SignUp</Link>
+       <Link to={"/Login"} className={styles.loginLink} onClick={handleSidebarclicksWhenisMobile}>LogIn</Link>
      </div>}
       </div>
     </div>
- 
-  
+}
+     {ismobile && (
+          <div className={styles.threeDotCont} onClick={() => {
+                setShowMain(!showMain);
+                dispatch(uiuxAction.handleSidebar(!sidebarState));
+              }}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        )}
+        </>
 }
 export default Sidebar;
-

@@ -1,19 +1,19 @@
-import logoImg from "../assets/mainlogo.png";
-import NetworkImg from "../assets/netWork.png";
-import Securityimg from "../assets/secuirity.png";
-import uiuxlogo from "../assets/uiux.png";
-import backendlogo from "../assets/backend.png";
-import MasterAi from "../assets/master.png";
-import dataAi from "../assets/DataAnalyst.png";
+// import logoImg from "/assets/mainlogo.png";
+import NetworkImg from "../../assets/netWork.png";
+import Securityimg from "../../assets/secuirity.png";
+import uiuxlogo from "../../assets/uiux.png";
+import backendlogo from "../../assets/backend.png";
+import MasterAi from "../../assets/master.png";
+import dataAi from "../../assets/DataAnalyst.png";
 import { Link } from "react-router";
-import styles from "../stylesheets/ControlsAndLogo.module.css";
+import styles from "../../stylesheets/ControlsAndLogo.module.css";
 
-const ControlsAndLogo = () => {
+const Controls = () => {
   return (
     <>
-      <div className={styles.logo}>
+      {/* <div className={styles.logo}>
         <img src={logoImg} alt="Logo" className={styles.Logoface} />
-      </div>
+      </div> */}
 
       <div className={styles.controlPanel}>
         <button className={styles.Controlsbtn}>
@@ -47,4 +47,4 @@ const ControlsAndLogo = () => {
   );
 };
 
-export default ControlsAndLogo;
+export default Controls;

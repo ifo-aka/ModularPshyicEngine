@@ -1,8 +1,8 @@
 import Sidebar from "./Sidebar";
 import {useSelector,useDispatch} from "react-redux";
 import { uiuxAction } from "../store/store";
-
-
+import logoImg from "../assets/mainlogo.png";
+import styles from "../stylesheets/Header.module.css"
 import { Link, Outlet } from "react-router";
 import { DashboardContext } from "../store/DashboardContext";
 
@@ -19,25 +19,13 @@ const Header = () => {
   const { isMobile ,showMain,setShowMain,setSidebarState} = useContext(DashboardContext);
   
   return (
-    <div className="main">
-      <div className="headerAndthreeDot">
-        {isMobile && (
-          <div className="threeDotcont">
-            <span
-              className="dots"
-              onClick={() => {
-                setShowMain(!showMain);
-                
-                dispatch(uiuxAction.handleSidebar(!sidebarState));
-              }}
-            >
-              ...
-            </span>
-          </div>
-        )}
-    
+ 
+      <div className="header">
+       
         <div className="Headermsg">
-          <h1>Welcome to AI's dashboard</h1>
+            <div className={styles.logo}>
+        <img src={logoImg} alt="Logo" className={styles.logoFace} />
+      </div>
           
           </div>
           { !isMobile && !isLogin &&
@@ -59,14 +47,15 @@ const Header = () => {
      
       </div>
   
-        <div className="sidebarandMain">
-          <Sidebar></Sidebar>
-    {showMain && (
-          <Outlet />
-    )}
-        </div>
+
       
-    </div>
+   
   );
 };
 export default Header;
+
+
+
+
+
+

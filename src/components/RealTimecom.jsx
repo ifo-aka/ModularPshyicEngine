@@ -14,7 +14,7 @@ export default function MemoryStats() {
 //   }, []);
 
   return (
-    <div className="p-4 bg-gray-900 text-white rounded-lg">
+    <div   className="p-4 bg-gray-900 text-white rounded-lg d-flex h-100">
       <h2 className="text-xl font-bold mb-2">🧠 AI Memory</h2>
       <ul>
         <li>REAL: {stats.REAL}</li>
@@ -27,7 +27,3 @@ export default function MemoryStats() {
 
 
 
-const RealTimecom= ()=>{
-    return <h2>This is real time chat of AI</h2>
-    
-}

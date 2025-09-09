@@ -38,7 +38,7 @@ const LineGraph = () => {
   };
 
   return (
-    <div className="  ">
+    <div className="w-100  ">
       <ReactApexChart options={options} series={series} type="line" height={340}  />
     </div>
   );

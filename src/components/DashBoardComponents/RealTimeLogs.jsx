@@ -1,7 +1,7 @@
 import LiveLogChart from "../../components/DashBoardWighets/LiveLogChart";
 
 const RealTimeLogs = () => {
-    return <div className="RealTimeLogs box">
+    return <div className="RealTimeLogs box" >
         <LiveLogChart />
         </div>
 }

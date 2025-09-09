@@ -1,6 +1,6 @@
-import "./dashBoardStyles.css";
+// import "../dashBoardStyles.css";
 import RadarDataChart from "../../components/DashBoardWighets/RadarDataChat";
-
+import "../../stylesheets/dashBoardStyles.css"
 const Data = () => {
     return <div className="data box">
                 <RadarDataChart />

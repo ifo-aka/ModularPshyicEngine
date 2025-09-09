@@ -1,22 +1,5 @@
 
-.sidebarandMain{
-    
-    display: flex;
-    width: 100%;
-    height: 100vh;
-   
-}
-.main{
-   
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   height: 100vh;
-   
-   
-}
-.headerAndthreeDot{
+.header{
   
     width: 100%;
     display: flex;

@@ -1,4 +1,4 @@
-import ThreatAlert from "../../components/DashBoardWighets/ThreatAlert";
+import ThreatAlert from "../DashBoardWighets/ThreatAlert";
 const Warnings = () => {
     return <div className="warnings box">
         <ThreatAlert activeThreats={3} />

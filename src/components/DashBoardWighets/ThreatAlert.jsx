@@ -7,8 +7,8 @@ const ThreatAlert = ({ activeThreats = 3 }) => {
   const icon = isDanger ? <FaExclamationTriangle /> : <FaShieldAlt />;
 
   return (
-    <div className={`flex items-center justify-between p-4 rounded-xl shadow-lg text-white ${bgColor} w-full max-w-sm`}>
-      <div className="flex items-center gap-3">
+    <div className={`flex items-center justify-between  rounded-xl shadow-lg text-white ${bgColor} w-full max-w-sm`}>
+      <div className="flex items-center ">
         <div className="text-2xl">{icon}</div>
         <div>
           <p className="text-sm font-medium">Threat Alerts</p>
